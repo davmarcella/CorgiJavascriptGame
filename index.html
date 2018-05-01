@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+
+    <title>Corgi Game</title>
+    <script type="text/javascript">
+
+        //load scores
+        //window.localStorage.clear();
+        var scores = window.localStorage.getItem('scores');
+        if(scores)
+            scores = JSON.parse(scores);
+        else if(!scores) {
+            var scores = {
+                'currentPlayer': {score: 0, level: 0, lives: 0},
+                'top3': {name: '', score: 0, level: 0},
+                'top4': {name: '', score: 0, level: 0},
+                'top5': {name: '', score: 0, level: 0},
+                'top1': {name: '', score: 0, level: 0},
+                'top2': {name: '', score: 0, level: 0},
+            };
+        }
+    </script>
+    <script src="libs/phaser.js"></script>
+    <script src="boot.js"></script>
+    <script src="preloader.js"></script>
+    <script src="game.js"></script>
+    <script src="game2.js"></script>
+    <script src="game3.js"></script>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: #000000;
+        }
+    </style>
+</head>
+<body>
+
+<div id="gameContainer"></div>
+<script type="text/javascript">
+    window.onload = function() {
+        var game = new Phaser.Game(1280, 620, Phaser.AUTO, 'gameContainer');
+        game.state.add('Boot', corgiGame.Boot);
+        game.state.add('Preloader', corgiGame.Preloader);
+        game.state.add('Game', corgiGame.Game);
+        game.state.add('Game2', corgiGame.Game2);
+        game.state.add('Game3', corgiGame.Game3);
+        game.state.start('Boot');
+    }
+</script>
+<div id ='main'></div>
+</body>
+</html>
