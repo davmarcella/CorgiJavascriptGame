@@ -467,29 +467,29 @@ corgiGame.Game2.prototype = {
                 scores['top2'] = JSON.parse(JSON.stringify(scores['top1']));
                 scores['top1'].name = player;
                 scores['top1'].score = this.points;
-                scores['top1'].level = 1;
+                scores['top1'].level = 2;
             } else if(this.points > scores['top2'].score){
                 scores['top5'] = JSON.parse(JSON.stringify(scores['top4']));
                 scores['top4'] = JSON.parse(JSON.stringify(scores['top3']));
                 scores['top3'] = JSON.parse(JSON.stringify(scores['top2']));
                 scores['top2'].name = player;
                 scores['top2'].score = this.points;
-                scores['top2'].level = 1;
+                scores['top2'].level = 2;
             } else if(this.points > scores['top3'].score){
                 scores['top5'] = JSON.parse(JSON.stringify(scores['top4']));
                 scores['top4'] = JSON.parse(JSON.stringify(scores['top3']));
                 scores['top3'].name = player;
                 scores['top3'].score = this.points;
-                scores['top3'].level = 1;
+                scores['top3'].level = 2;
             } else if(this.points > scores['top4'].score){
                 scores['top5'] = JSON.parse(JSON.stringify(scores['top4']));
                 scores['top4'].name = player;
                 scores['top4'].score = this.points;
-                scores['top4'].level = 1;
+                scores['top4'].level = 2;
             } else if(this.points > scores['top5'].score){
                 scores['top5'].name = player;
                 scores['top5'].score = this.points;
-                scores['top5'].level = 1;
+                scores['top5'].level = 2;
 
             }
             scores['currentPlayer'].score = 0;

@@ -47,7 +47,7 @@ corgiGame.Game.prototype = {
         this.points = 0;
         this.startTime = this.time.now;
         this.enemyPupArr = [];
-        this.lives = scores.currentPlayer.lives;
+        this.lives = 0;
 
         //setup world
         this.buildWorld();
